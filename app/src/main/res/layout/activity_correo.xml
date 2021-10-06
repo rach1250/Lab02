@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistroPaciente">
+    tools:context=".Correo">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Registrar Paciente"
+            android:text="Envio de Correo"
             android:textAlignment="center"
             android:textSize="34sp" />
     </FrameLayout>
@@ -40,74 +40,41 @@
             android:id="@+id/correoMedico"
             android:layout_width="match_parent"
             android:layout_height="34dp"
-            android:text="Ingresar Nombre"
             android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/nombreP"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/correo"
-            android:layout_width="match_parent"
-            android:layout_height="34dp"
-            android:text="Ingresar DNI"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/dniP"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="34dp"
-            android:text="Ingresar Dirección"
+            android:text="Asunto: "
             android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/direccionP"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/Asunto"
             android:layout_width="match_parent"
             android:layout_height="34dp"
-            android:text="Ingresar Correo"
             android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/correoP"
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:layout_height="34dp"
+            android:text="Mensaje:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/Mensaje"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/EnviarCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#D8D2D2"
-            android:text="Registrar"
+            android:text="Enviar"
             android:textColor="#040404" />
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

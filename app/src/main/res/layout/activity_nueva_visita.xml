@@ -43,7 +43,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/correoMedico"
             android:layout_width="match_parent"
             android:layout_height="34dp"
             android:text="Ingresar Peso"
@@ -59,7 +59,7 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/correo"
             android:layout_width="match_parent"
             android:layout_height="34dp"
             android:text="Ingresar Temperatura"
@@ -107,7 +107,7 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
-            android:id="@+id/RegistroVisita"
+            android:id="@+id/EnviarCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#D8D2D2"

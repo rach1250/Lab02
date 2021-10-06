@@ -13,8 +13,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     Button registro, visita, correo;
-    TextView nombre;
+    TextView nombre, detalle;
     Paciente paciente;
+    Visita nuevaVisita;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,18 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        correo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(paciente != null){
+                    Boton_EnviarCorreo();
+                }
+                else{
+                    Boton_RegistrarPaciente();
+                }
+            }
+        });
     }
 
     private void Boton_RegistrarPaciente(){
@@ -58,6 +71,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void Boton_VisitaPaciente(){
         Intent intent = new Intent(this, NuevaVisita.class);
+        intent.putExtra("Paciente", paciente);
+        startActivityForResult(intent, 2);
+    }
+
+    private void Boton_EnviarCorreo(){
+        Intent intent = new Intent(this, Correo.class);
         intent.putExtra("Paciente", paciente);
         startActivityForResult(intent, 1);
     }
@@ -69,7 +88,18 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == 1) {
             paciente = (Paciente) data.getSerializableExtra("Paciente");
             nombre = findViewById(R.id.NombrePaciente);
-            nombre.setText("Paciente " + paciente.nombre);
+            nombre.setText("Paciente: " + paciente.nombre + "\nDNI: " + paciente.dni);
+        }
+
+        if(requestCode == 2){
+            paciente = (Paciente) data.getSerializableExtra("Paciente");
+            nombre = findViewById(R.id.NombrePaciente);
+            nombre.setText("Paciente: " + paciente.nombre + "\nDNI: " + paciente.dni);
+
+            nuevaVisita = paciente.getVisita(paciente.getVisitaSize() - 1);
+            detalle = findViewById(R.id.DetallePaciente);
+            detalle.setText("Peso: " + nuevaVisita.getPeso() + "\nTemperatura: " + nuevaVisita.getTemperatura() +
+                    "\nPresión: " + nuevaVisita.getPresion() + "\nNivel Saturación: " + nuevaVisita.getNivelSaturacion());
         }
     }
 }

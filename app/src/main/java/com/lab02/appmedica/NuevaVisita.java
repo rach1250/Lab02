@@ -30,7 +30,7 @@ public class NuevaVisita extends AppCompatActivity {
         presion = (EditText) findViewById(R.id.presion);
         nivelSaturacion = (EditText) findViewById(R.id.nivelSaturacion);
 
-        registro = (Button) findViewById(R.id.RegistroVisita);
+        registro = (Button) findViewById(R.id.EnviarCorreo);
 
         registro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +51,7 @@ public class NuevaVisita extends AppCompatActivity {
     private void Boton_RegistrarVisita(){
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("Paciente", paciente);
-        setResult(1, intent);
+        setResult(2, intent);
         finish();
     }
 }
